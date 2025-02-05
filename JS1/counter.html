@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Counter</title>
+
+		<script type="text/javascript">
+			let counter = 0;
+			function count(){
+				counter ++;
+				document.querySelector("h1").innerHTML=`Hello ${counter}!`;
+				
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>Hello 0!</h1>
+		<button onclick="count()">Click Here</button>
+		<h1> Will this change? </h1>
+	</body>
+</html>
