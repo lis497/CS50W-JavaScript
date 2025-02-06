@@ -10,8 +10,11 @@
 			let counter = 0;
 			function count(){
 				counter ++;
+				//console.log(counter)
 				document.querySelector("h1").innerHTML=`Hello ${counter}!`;
-				
+				if (counter % 10 === 0) {
+					alert(`Counter is now ${counter}`);
+				}	
 			}
 		</script>
 	</head>
