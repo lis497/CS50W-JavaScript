@@ -19,6 +19,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('singlepage1/', include("singlepage1.urls"))
+    path('singlepage1/', include("singlepage1.urls")),
+    path('history/', include("singlepagehistory.urls"))
 
 ]
