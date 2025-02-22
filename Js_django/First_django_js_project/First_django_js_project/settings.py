@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'singlepage1',
     'singlepagehistory',
+    'infinite_post',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
