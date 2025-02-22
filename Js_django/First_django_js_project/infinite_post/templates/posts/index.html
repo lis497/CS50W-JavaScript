@@ -23,6 +23,8 @@
 		// When DOM loads, render the first 20 posts
 		document.addEventListener('DOMContentLoaded', load);
 		
+		//window.onscroll run independly, waiting for scorll event
+		//the page is too small and doesn't has scrollbar, this won't work
 		window.onscroll = () => {
 			if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
 				load();
