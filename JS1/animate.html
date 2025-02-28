@@ -1,0 +1,81 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Animate</title>
+		<style>
+			
+			@keyframes grow {
+				from {
+					left: 0%;			
+					font-size: 20px;
+					color: grey;
+				}
+				to {
+					left: 50%;
+					font-size: 100px;
+					color: orange;
+				}
+			}
+			@keyframes move {
+				/* time 0% and position 0%*/
+				0% {
+					left: 0%;
+				}
+				75% {
+					left: 50%;
+				}
+				100% {
+					left: 20%;
+				}
+			}
+			h1 {
+				
+				position: relative;
+				animation-name: grow;
+				animation-duration: 5s;
+				animation-fill-mode: forwards;
+			}
+			h2 {
+				/*without position, it is not working*/
+				position: relative;
+				animation-name: move;
+				animation-duration: 5s;
+				animation-fill-mode: forwards;
+				animation-iteration-count: 2;
+			}
+			div {
+				background-color: lightskyblue;
+				width: 30%;
+				padding: 30px;
+				word-wrap: break-word;
+			}
+		</style>
+		<script type="text/javascript">
+			document.addEventListener('DOMContentLoaded', function() {
+				const h1 = document.querySelector('h1');
+				h1.style.animationPlayState = 'paused';
+
+				document.querySelector('button').onclick = () => {
+					if (h1.style.animationPlayState === 'paused') {
+						h1.style.animationPlayState = 'running';
+					} else {
+						h1.style.animationPlayState = 'paused';
+					}
+				}
+			});
+		</script>
+
+	</head>
+	<body>
+		<!-- only the first button get function -->
+		<button>Click</button>
+		<div>
+			<h1>MeowMeow!</h1>
+		</div>
+
+		<h2><button> outside div</button></h2>
+		
+	</body>
+</html>
