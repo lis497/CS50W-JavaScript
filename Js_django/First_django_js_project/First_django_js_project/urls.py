@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('singlepage1/', include("singlepage1.urls")),
     path('history/', include("singlepagehistory.urls")),
-    path('infinite/', include("infinite_post.urls"))
+    path('infinite/', include("infinite_post.urls")),
+    path('animation/', include("animation.urls"))
 
 ]

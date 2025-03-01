@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'singlepage1',
     'singlepagehistory',
     'infinite_post',
+    'animation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
