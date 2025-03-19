@@ -5,12 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Single Page</title>
 	<style>
-
 		@keyframes hide {
+			/* animation inheritant the parent not post*/
 			0% {
 				opacity: 1;
 				height: 100%;
+				/*this 30% or 100% is the percentage of parent size*/
 				line-height: 100%;
+				/*padding also affect this size */
 				padding: 40px;
 				margin-bottom: 10px;
 			}
@@ -47,9 +49,35 @@
 			animation-play-state: paused;
 		}
 
+
+		#posts {
+			background-color: lightslategray;
+			/*without the height, this won't display the color
+			but with the child element, this color will display
+			the #posts has higher priority than div
+			if you don't comment out this posts, it display gray
+			else, it display red
+			you must remove this height with animation because the child
+			element inheritance this height*/
+			/*height: 300px;*/
+			/* if you add height, animation will change the child size */
+		}
+
 		body {
 			padding-bottom: 50px;
 		}
+
+
+		div {
+			background-color: red;
+			/* you must remove this 200px*/
+			/* auto in .post doesn't affect this part but
+			animation 100% /30% will inheritant this size even
+			their is a #post override this one*/
+			/*height: 200px;*/
+			margin-bottom: 20px;
+		}
+
 	</style>
 	<script type="text/javascript">
 		// Start with first post
@@ -100,7 +128,7 @@
 			// Create new post
 			const post = document.createElement('div');
 			post.className = 'post';
-			post.innerHTML = `${contents} <button class="hide">Hide</button>`
+			post.innerHTML = `this is individual post <br/>${contents} <button class="hide">Hide</button>`
 
 			// Add post to DOM
 			document.querySelector('#posts').append(post);
@@ -111,8 +139,10 @@
 
 <body>
 	<div id="posts">
-		
+		<h1> This is the posts zone </h1>
 	</div>
+
+	<div></div>
 	
 </body>
 </html>
