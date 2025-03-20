@@ -4,32 +4,26 @@
         <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        <title>Hello</title>
+        <title>Counter</title>
     </head>
     <body>
         <div id="app"></div>
 
         <script type="text/babel">
-            function Cat(prop) {
-                return (
-                    <div >
-                        <h1>Maine Coon</h1>
-                        <h2>Price: {prop.price}</h2>
-                        
-                        <img src="cat1.jpg" width={prop.size}/>
-                        <h4>Lovely,mmmmmmmmm </h4>
-
-
-                    </div>
-                );
-            }
 
             function App() {
+
+                const [count, setCount] = React.useState(0);
+
+                function updateCount() {
+                    setCount(count + 1);
+                }
+                
+
                 return (
                 <div>
-                    <Cat size="500px" price="2000" />
-                    <hr/>
-                    <Cat size="200px" price="300" />
+                    <div>{count}</div>
+                    <button onClick={updateCount}>Count</button>
                 </div>)
             }
 
@@ -37,5 +31,3 @@
         </script>
     </body>
 </html>
-
-
